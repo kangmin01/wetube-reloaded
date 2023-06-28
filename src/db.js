@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 mongoose.set("strictQuery", true);
 mongoose.connect(
-  "mongodb+srv://mini:plzcomeon@cluster0.aqlxcmk.mongodb.net/test"
+  "mongodb+srv://mini:49mviw4tLwMedzRI@wetubetest.tjmax3s.mongodb.net/"
 );
 
 const db = mongoose.connection;
