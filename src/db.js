@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
 mongoose.set("strictQuery", true);
-mongoose.connect(
-  "mongodb+srv://mini:49mviw4tLwMedzRI@wetubetest.tjmax3s.mongodb.net/"
-);
+mongoose.connect(process.env.DB_URL);
 
 const db = mongoose.connection;
 
