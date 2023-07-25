@@ -1,0 +1,17 @@
+.social-login {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 50px;
+  margin-top: 50px;
+
+  .social__btn {
+    margin-bottom: 20px;
+  }
+  .social__btn--github {
+    background-color: transparent;
+    color: azure;
+  }
+  .social__btn--kakao {
+    background-color: transparent;
+    color: azure;
+  }
+}
