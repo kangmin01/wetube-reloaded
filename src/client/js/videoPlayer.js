@@ -128,6 +128,13 @@ const handleMouseLeave = () => {
   controlsTimeout = setTimeout(hideControls, 1000);
 };
 
+const handleEnded = () => {
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/view`, {
+    method: "POST",
+  });
+};
+
 window.addEventListener("keydown", function (event) {
   if (event.code == "Space") {
     handlePlayClick();
@@ -146,6 +153,7 @@ video.readyState
   ? handleLoadedMetadata()
   : video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
+video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleInputTimeline);
 timeline.addEventListener("mousedown", handleTimelineMousedown);
 timeline.addEventListener("mouseup", handleTimelineMouseup);
