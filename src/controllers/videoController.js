@@ -59,13 +59,14 @@ export const postUpload = async (req, res) => {
   const {
     user: { _id },
   } = req.session;
-  const { path: fileUrl } = req.file;
+  const { video, thumb } = req.files;
   const { title, description, hashtags } = req.body;
   try {
     const newVideo = await Video.create({
       title,
       description,
-      fileUrl,
+      fileUrl: video[0].path,
+      thumbUrl: thumb[0].path,
       owner: _id,
       hashtags: Video.formatHashtags(hashtags),
     });
@@ -102,6 +103,7 @@ export const deleteVideo = async (req, res) => {
 };
 
 export const search = async (req, res) => {
+  console.log("서치 되나");
   const { keyword } = req.query;
   let videos = [];
   if (keyword) {
