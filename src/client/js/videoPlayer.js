@@ -136,6 +136,9 @@ const handleEnded = () => {
 };
 
 window.addEventListener("keydown", function (event) {
+  if (event.target == textarea) {
+    return;
+  }
   if (event.code == "Space") {
     handlePlayClick();
   } else if (event.key == "M" || event.key == "m") {

@@ -62,6 +62,7 @@ export const postLogin = async (req, res) => {
   }
   req.session.loggedIn = true;
   req.session.user = user;
+  console.log(req.session.user);
   return res.redirect("/");
 };
 
@@ -187,7 +188,7 @@ export const finishKakaoLogin = async (req, res) => {
     ) {
       return res.redirect("/login");
     }
-    console.log(userData);
+
     let user = await User.findOne({ email: userData.kakao_account.email });
     if (!user) {
       user = await User.create({
@@ -301,7 +302,6 @@ export const postChangePassword = async (req, res) => {
   req.session.destroy();
   req.flash("info", "Password updated");
   return res.redirect("/login");
-  // 로그아웃으로 가야하나?
 };
 
 export const see = async (req, res) => {
@@ -316,7 +316,7 @@ export const see = async (req, res) => {
   if (!user) {
     return res.status(404).render("404", { pageTitle: "User not found." });
   }
-  console.log(user);
+
   return res.render("users/profile", {
     pageTitle: user.name,
     user,

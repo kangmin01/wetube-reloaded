@@ -4,7 +4,7 @@
   "description": "Clone coding - Youtube",
   "scripts": {
     "dev:server": "nodemon",
-    "dev:assets": "webpack --config webpack.config.js"
+    "dev:assets": "webpack"
   },
   "repository": {
     "type": "git",
