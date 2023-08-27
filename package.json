@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Clone coding - Youtube",
   "scripts": {
+    "start": "node build/init.js",
+    "build": "npm run build:server && npm run build:assets",
+    "build:server": "babel src -d build",
+    "build:assets": "webpack --mode=development",
     "dev:server": "nodemon",
-    "dev:assets": "webpack"
+    "dev:assets": "webpack --mode=development -w"
   },
   "repository": {
     "type": "git",
@@ -32,9 +36,11 @@
     "regenerator-runtime": "^0.13.11"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.10",
     "@babel/core": "^7.20.12",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@flydotio/dockerfile": "^0.4.8",
     "babel-loader": "^9.1.3",
     "css-loader": "^6.8.1",
     "mini-css-extract-plugin": "^2.7.6",
