@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for blue-tree-3406 on 2023-08-27T13:57:39+09:00
+# fly.toml app configuration file generated for twilight-forest-6619 on 2023-08-27T16:21:42+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "blue-tree-3406"
+app = "twilight-forest-6619"
 primary_region = "nrt"
 
 [build]
